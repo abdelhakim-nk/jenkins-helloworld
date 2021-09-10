@@ -1,0 +1,11 @@
+
+
+node {
+    stage('build and run') {
+    git branch: 'main', url: 'https://github.com/abdelhakim-nk/jenkins-helloworld.git'
+    bat '''
+        javac Main.java
+        java Main
+        '''
+}
+}
