@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     stages{
-        stage('build and run') {
+        stage('build') {
             steps { 
                 git branch: 'main', url: 'https://github.com/abdelhakim-nk/jenkins-helloworld.git', credentialsId: 'tokenPassGit'
             }
