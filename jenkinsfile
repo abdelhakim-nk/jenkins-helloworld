@@ -5,13 +5,16 @@ pipeline {
         stage('build and run') {
             steps { 
                 git branch: 'main', url: 'https://github.com/abdelhakim-nk/jenkins-helloworld.git', credentialsId: 'tokenPassGit'
+            }
+        }
+        stage('run') {
+            steps {
                 bat '''
                 javac Main.java
                 java Main
-                 '''
+                '''
             }
         }
-    
     }
 }
 
