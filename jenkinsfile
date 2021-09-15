@@ -1,13 +1,19 @@
-
-
 pipeline {
     agent any
+    
+    stages{
+        stage('build and run') {
+            steps { 
+                git branch: 'main', url: 'https://github.com/abdelhakim-nk/jenkins-helloworld.git', credentialsId: 'tokenPassGit'
+                bat '''
+                javac Main.java
+                java Main
+                 '''
+            }
+        }
+    
+    }
+}
 
-    stage('build and run') {
-    git branch: 'main', url: 'https://github.com/abdelhakim-nk/jenkins-helloworld.git', credentialsId: 'tokenPassGit'
-    bat '''
-        javac Main.java
-        java Main
-        '''
-}
-}
+
+    
