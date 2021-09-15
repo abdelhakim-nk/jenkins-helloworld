@@ -2,7 +2,7 @@
 
 node {
     stage('build and run') {
-    git branch: 'main', url: 'https://github.com/abdelhakim-nk/jenkins-helloworld.git'
+    git branch: 'main', url: 'https://github.com/abdelhakim-nk/jenkins-helloworld.git', credentialsId: 'TokenPassGit'
     bat '''
         javac Main.java
         java Main
